@@ -1,4 +1,22 @@
 export default function AsideBar() {
+
+    const sugestoesSeguidores = [
+        {img: "assets/img/bad.vibes.memes.svg", nome: "bad.vibes.memes",
+        razao: "Segue você", seguir: "Seguir"},
+
+        {img: "assets/img/chibirdart.svg", nome: "chibirdart",
+        razao:"Segue você", seguir: "Seguir"},
+
+        {img: "assets/img/razoesparaacreditar.svg", nome: "razoesparaacreditar",
+        razao: "Novo no Instagram", seguir: "Seguir"},
+
+        {img: "assets/img/adorable_animals.svg", nome: "adorable_animals",
+        razao: "Segue você", seguir: "Seguir"},
+
+        {img: "assets/img/smallcutecats.svg", nome: "smallcutecats",
+        razao: "Segue você", seguir: "Seguir"}
+    ];
+
     return (
         <div class="sidebar">
 
@@ -6,21 +24,13 @@ export default function AsideBar() {
 
             <div class="sugestoes">
                 <SugestoesTitulo sugestoes="Sugestões para você" opcao="Ver tudo" />
-
-                <SugestoesUsuario img = "assets/img/bad.vibes.memes.svg" nome = "bad.vibes.memes"
-                                    razao = "Segue você" seguir = "Seguir"/>
-
-                <SugestoesUsuario img = "assets/img/chibirdart.svg" nome = "chibirdart"
-                                    razao = "Segue você" seguir = "Seguir"/>
-
-                <SugestoesUsuario img = "assets/img/razoesparaacreditar.svg" nome = "razoesparaacreditar"
-                                    razao = "Novo no Instagram" seguir = "Seguir"/>
-
-                <SugestoesUsuario img = "assets/img/adorable_animals.svg" nome = "adorable_animals"
-                                    razao = "Segue você" seguir = "Seguir"/>
-
-                <SugestoesUsuario img = "assets/img/smallcutecats.svg" nome = "smallcutecats"
-                                    razao = "Segue você" seguir = "Seguir"/>
+                {
+                    sugestoesSeguidores.map(sugestaoSeguidor =>(
+                            <SugestoesUsuario img = {sugestaoSeguidor.img} 
+                                                nome = {sugestaoSeguidor.nome}
+                                                razao = {sugestaoSeguidor.razao} 
+                                                seguir = {sugestaoSeguidor.seguir}/>))
+                }
             </div>
 
             <div class="links">
