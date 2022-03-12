@@ -1,35 +1,46 @@
 export default function Navbar() {
     return (
         <div class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <div class="separador"></div>
-                    <img src="assets/img/logo.png" alt=""/>
-                </div>
+            <LogoNavbar nomelogo = "logo-instagram" imglogo = "assets/img/logo.png"
+                ionlogo = "logo-instagram" imgmobile = "assets/img/logo.png" 
+                iconemobile = "paper-plane-outline"/>
+        </div>
+    )
+}
 
-                <div class="logo-mobile">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </div>
+function LogoNavbar(props) {
 
-                <div class="instagram-mobile">
-                    <img src="assets/img/logo.png" alt=""/>
-                </div>
+    const icones = ["paper-plane-outline", "compass-outline", "heart-outline", "person-outline"];
+    const iconesJSX = icones.map(icone => {
+        return <ion-icon name={icone}></ion-icon>
+    })
 
-                <div class="pesquisa">
-                    <input type="text" placeholder="Pesquisar" />
-                </div>
+    return (
+        <div class="container">
+            <div class="logo">
+                <ion-icon name={props.nomelogo}></ion-icon>
+                <div class="separador"></div>
+                <img src={props.imglogo} alt="" />
+            </div>
 
-                <div class="icones">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                    <ion-icon name="compass-outline"></ion-icon>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="person-outline"></ion-icon>
-                </div>
+            <div class="logo-mobile">
+                <ion-icon name={props.ionlogo}></ion-icon>
+            </div>
 
-                <div class="icones-mobile">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                </div>
+            <div class="instagram-mobile">
+                <img src={props.imgmobile} alt="" />
+            </div>
+
+            <div class="pesquisa">
+                <input type="text" placeholder="Pesquisar" />
+            </div>
+
+            <div class="icones">
+                {iconesJSX}
+            </div>
+
+            <div class="icones-mobile">
+                <ion-icon name={props.iconemobile}></ion-icon>
             </div>
         </div>
     )

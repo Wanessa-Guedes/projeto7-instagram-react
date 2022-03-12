@@ -1,11 +1,12 @@
 export default function Footer() {
+    const icones = ["home", "search-outline", "add-circle-outline", "heart-outline", "person-outline"];
+    const iconesJSX = icones.map(icone => {
+        return <ion-icon name={icone}></ion-icon>
+    })
     return (
         <div class="fundo-mobile">
-            <ion-icon name="home"></ion-icon>
-            <ion-icon name="search-outline"></ion-icon>
-            <ion-icon name="add-circle-outline"></ion-icon>
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="person-outline"></ion-icon>
+            {iconesJSX}
         </div>
     )
 }
+
