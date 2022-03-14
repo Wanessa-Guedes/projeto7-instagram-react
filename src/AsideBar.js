@@ -1,3 +1,6 @@
+import Links from "./LinksAsideBar";
+import Copyright from "./CopyRightAsideBar";
+
 export default function AsideBar() {
 
     const sugestoesSeguidores = [
@@ -33,13 +36,8 @@ export default function AsideBar() {
                 }
             </div>
 
-            <div class="links">
-                Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
-            </div>
-
-            <div class="copyright">
-                © 2021 INSTAGRAM DO FACEBOOK
-            </div>
+                <Links />
+                <Copyright />
         </div>
     )
 }

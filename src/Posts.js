@@ -1,24 +1,22 @@
 export default function Posts() {
 
     const conteudoPosts =[
-        {img1:"assets/img/meowed.svg", user:"meowed", ion:"ellipsis-horizontal",
-        img2:"assets/img/gato-telefone.svg", ion1:"heart-outline", ion2:"chatbubble-outline", 
-        ion3:"paper-plane-outline", ion4:"bookmark-outline", img3:"assets/img/respondeai.svg",
-        usercurtida:"respondeai", qtecurtidas:"outras 101.523 pessoas"},
+        {imgUser:"assets/img/meowed.svg", user:"meowed", ionDots:"ellipsis-horizontal",
+        postUser:"assets/img/gato-telefone.svg", ionSave:"bookmark-outline", imgUserLike:"assets/img/respondeai.svg",
+        userLike:"respondeai", qteLike:"outras 101.523 pessoas"},
 
-        {img1:"assets/img/barked.svg", user:"barked", ion:"ellipsis-horizontal", 
-        img2:"assets/img/dog.svg", ion1:"heart-outline", ion2:"chatbubble-outline", 
-        ion3:"paper-plane-outline", ion4:"bookmark-outline", img3:"assets/img/adorable_animals.svg",
-        usercurtida:"adorable_animals", qtecurtidas:"outras 99.159 pessoas"}
+        {imgUser:"assets/img/barked.svg", user:"barked", ionDots:"ellipsis-horizontal", 
+        postUser:"assets/img/dog.svg", ionSave:"bookmark-outline", imgUserLike:"assets/img/adorable_animals.svg",
+        userLike:"adorable_animals", qteLike:"outras 99.159 pessoas"}
     ];
 
     return (
         <div class="posts">
 
             {
-            conteudoPosts.map(conteudoPost => (<ContainerPosts img1={conteudoPost.img1} user={conteudoPost.user} ion={conteudoPost.ion}
-                        img2={conteudoPost.img2} ion1={conteudoPost.ion1} ion2={conteudoPost.ion2} ion3={conteudoPost.ion3} ion4={conteudoPost.ion4}
-                        img3={conteudoPost.img3} usercurtida={conteudoPost.usercurtida} qtecurtidas={conteudoPost.qtecurtidas}/>))
+            conteudoPosts.map(conteudoPost => (<ContainerPosts imgUser={conteudoPost.imgUser} user={conteudoPost.user} ionDots={conteudoPost.ionDots}
+                        postUser={conteudoPost.postUser} ionSave={conteudoPost.ionSave}
+                        imgUserLike={conteudoPost.imgUserLike} userLike={conteudoPost.userLike} qteLike={conteudoPost.qteLike}/>))
             
             }
         </div>
@@ -26,38 +24,42 @@ export default function Posts() {
 }
 
 function ContainerPosts(props) {
+    
+    const icones = ["heart-outline", "chatbubble-outline", "paper-plane-outline"];
+    const iconesJSX = icones.map(icone => {
+        return <ion-icon name={icone}></ion-icon>
+    })
+
     return (
         <div class="post">
             <div class="topo">
                 <div class="usuario">
-                    <img src={props.img1} alt="" />
+                    <img src={props.imgUser} alt="" />
                     {props.user}
                 </div>
                 <div class="acoes">
-                    <ion-icon name={props.ion}></ion-icon>
+                    <ion-icon name={props.ionDots}></ion-icon>
                 </div>
             </div>
 
             <div class="conteudo">
-                <img src={props.img2} alt="" />
+                <img src={props.postUser} alt="" />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name={props.ion1}></ion-icon>
-                        <ion-icon name={props.ion2}></ion-icon>
-                        <ion-icon name={props.ion3}></ion-icon>
+                        {iconesJSX}
                     </div>
                     <div>
-                        <ion-icon name={props.ion4}></ion-icon>
+                        <ion-icon name={props.ionSave}></ion-icon>
                     </div>
                 </div>
 
                 <div class="curtidas">
-                    <img src={props.img3} alt="" />
+                    <img src={props.imgUserLike} alt="" />
                     <div class="texto">
-                        Curtido por <strong>{props.usercurtida}</strong> e <strong>{props.qtecurtidas}</strong>
+                        Curtido por <strong>{props.userLike}</strong> e <strong>{props.qteLike}</strong>
                     </div>
                 </div>
             </div>

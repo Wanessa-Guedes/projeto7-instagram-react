@@ -1,3 +1,4 @@
+import Setinha from "./Setinha";
 export default function Stories() {
 
     const conteudosStories= [
@@ -17,10 +18,7 @@ export default function Stories() {
             {
                 conteudosStories.map(conteudo => <ConteudoStories img = {conteudo.img}  userStorie = {conteudo.userStorie}/>)
             }
-            
-            <div class="setinha">
-                <ion-icon name="chevron-forward-circle"></ion-icon>
-            </div>
+            <Setinha />
         </div>
     )
 }
